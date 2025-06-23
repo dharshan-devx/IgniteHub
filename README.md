@@ -1,9 +1,9 @@
 # IgniteHub 🚀 ~ Curated Resource Hub for Young Builders
 
-> A modern, open-source hub that brings together the best tools, platforms, communities, and learning opportunities — built for the next generation of innovators, developers, designers, and creators.
+> A modern, open-source hub that brings together the best tools, platforms, communities, and learning opportunities ~ built for the next generation of innovators, developers, designers, and creators.
 
 Finding the right resources shouldn't slow you down.  
-**IgniteHub** helps you discover what matters — so you can spend more time building.
+**IgniteHub** helps you discover what matters ~ so you can spend more time building.
 
 ---
 
@@ -76,7 +76,7 @@ Save and manage favorite resources
 
 Persistent across browser sessions (localStorage)
 
-Offline-friendly — no backend needed
+Offline-friendly ~ no backend needed
 
 📧 Contact Form
 Email submissions powered by FormSubmit
