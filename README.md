@@ -1,4 +1,4 @@
-# IgniteHub 🚀 — Curated Resource Hub for Young Builders
+# IgniteHub 🚀 ~ Curated Resource Hub for Young Builders
 
 > A modern, open-source hub that brings together the best tools, platforms, communities, and learning opportunities — built for the next generation of innovators, developers, designers, and creators.
 
