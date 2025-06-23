@@ -10,13 +10,12 @@ Finding the right resources shouldn't slow you down.
 ## ✨ Key Highlights
 
 - 🎯 Curated resources for skills, tools, funding, communities, and more  
-- 🔍 Blazing-fast fuzzy search with advanced filters  
-- ⭐ Save your favorites — no login required  
+- 🔍 Blazing ~ fast fuzzy search with advanced filters  
 - 💻 Fully responsive (mobile, tablet, desktop)  
-- ⚡️ PWA-ready — works offline  
+- ⚡️ PWA-ready ~ works offline  
 - 🎨 Beautiful, modern UI with smooth UX  
-- 🪶 Lightweight — no backend required  
-- 🌐 Fully open-source & easy to contribute
+- 🪶 Lightweight ~ no backend required  
+- 🌐 Fully open source & easy to contribute
 
 ---
 
