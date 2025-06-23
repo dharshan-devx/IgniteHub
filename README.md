@@ -22,8 +22,8 @@ Finding the right resources shouldn't slow you down.
 
 ## 🚀 Live Demo
 
-[👉 Visit IgniteHub Live (Demo)](https://your-demo-url.com)  
-*(replace with your deployed link)*
+[👉 Visit IgniteHub Live (Demo)](https://ignitehub-teal.vercel.app/)  
+
 
 ---
 
