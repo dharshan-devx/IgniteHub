@@ -1,5 +1,8 @@
 import React from 'react';
-import { Search, X } from 'lucide-react';
+import { Search, X, SlidersHorizontal } from 'lucide-react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import AdvancedFilters from './search/AdvancedFilters';
 import {
   Select,
   SelectContent,
@@ -7,20 +10,29 @@ import {
   SelectTrigger,
   SelectValue
 } from './ui/select';
-
-interface SearchFilters {
-  category: string;
-  difficulty: string;
-  type: string;
-  isFree: string;
-}
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from './ui/collapsible';
 
 interface AdvancedSearchProps {
   searchTerm: string;
   onSearchChange: (term: string) => void;
-  filters: SearchFilters;
-  onFilterChange: (key: keyof SearchFilters, value: string) => void;
+  filters: {
+    tags: string[];
+    dateRange: { start: string; end: string };
+    location: string;
+    minRating: number;
+    difficulty: string;
+    type: string;
+    isFree: string;
+  };
+  onFilterChange: (key: string, value: any) => void;
+  sortBy: string;
+  onSortChange: (value: string) => void;
   onClearAll: () => void;
+  availableTags: string[];
   placeholder?: string;
 }
 
@@ -29,102 +41,89 @@ const AdvancedSearch: React.FC<AdvancedSearchProps> = ({
   onSearchChange,
   filters,
   onFilterChange,
+  sortBy,
+  onSortChange,
   onClearAll,
+  availableTags,
   placeholder = 'Search resources...'
 }) => {
+  const [showAdvanced, setShowAdvanced] = React.useState(false);
+
   const hasActiveFilters =
-    searchTerm || Object.values(filters).some(f => f && f !== 'all');
+    searchTerm || 
+    filters.tags.length > 0 ||
+    filters.dateRange.start ||
+    filters.dateRange.end ||
+    filters.location ||
+    filters.minRating > 0 ||
+    filters.difficulty !== 'all' ||
+    filters.type !== 'all' ||
+    filters.isFree !== 'all';
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border p-6 mb-8">
-      <div className="relative mb-4">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Search className="h-5 w-5 text-gray-400" />
+    <div className="bg-white rounded-lg shadow-sm border p-6 mb-8 space-y-4">
+      {/* Main Search Bar */}
+      <div className="flex gap-4">
+        <div className="relative flex-1">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search className="h-5 w-5 text-gray-400" />
+          </div>
+          <Input
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+            className="pl-10"
+            placeholder={placeholder}
+          />
         </div>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={e => onSearchChange(e.target.value)}
-          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
-          placeholder={placeholder}
-        />
+
+        <Select value={sortBy} onValueChange={onSortChange}>
+          <SelectTrigger className="w-48">
+            <SelectValue placeholder="Sort by" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="name">Name (A-Z)</SelectItem>
+            <SelectItem value="name-desc">Name (Z-A)</SelectItem>
+            <SelectItem value="rating">Highest Rated</SelectItem>
+            <SelectItem value="rating-asc">Lowest Rated</SelectItem>
+            <SelectItem value="newest">Newest First</SelectItem>
+            <SelectItem value="oldest">Oldest First</SelectItem>
+            <SelectItem value="popular">Most Popular</SelectItem>
+          </SelectContent>
+        </Select>
+
+        <Collapsible open={showAdvanced} onOpenChange={setShowAdvanced}>
+          <CollapsibleTrigger asChild>
+            <Button variant="outline" className="flex items-center space-x-2">
+              <SlidersHorizontal size={16} />
+              <span>Filters</span>
+              {hasActiveFilters && (
+                <span className="bg-purple-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  !
+                </span>
+              )}
+            </Button>
+          </CollapsibleTrigger>
+        </Collapsible>
+
+        {hasActiveFilters && (
+          <Button variant="outline" onClick={onClearAll}>
+            <X size={16} className="mr-1" />
+            Clear All
+          </Button>
+        )}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Difficulty
-          </label>
-          <Select
-            value={filters.difficulty}
-            onValueChange={value => onFilterChange('difficulty', value)}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Any difficulty" />
-            </SelectTrigger>
-            <SelectContent className="bg-white border shadow-lg z-50">
-              <SelectItem value="all">Any difficulty</SelectItem>
-              <SelectItem value="beginner">Beginner</SelectItem>
-              <SelectItem value="intermediate">Intermediate</SelectItem>
-              <SelectItem value="advanced">Advanced</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Type
-          </label>
-          <Select
-            value={filters.type}
-            onValueChange={value => onFilterChange('type', value)}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Any type" />
-            </SelectTrigger>
-            <SelectContent className="bg-white border shadow-lg z-50">
-              <SelectItem value="all">Any type</SelectItem>
-              <SelectItem value="tool">Tool</SelectItem>
-              <SelectItem value="platform">Platform</SelectItem>
-              <SelectItem value="course">Course</SelectItem>
-              <SelectItem value="app">App</SelectItem>
-              <SelectItem value="software">Software</SelectItem>
-              <SelectItem value="service">Service</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Price
-          </label>
-          <Select
-            value={filters.isFree}
-            onValueChange={value => onFilterChange('isFree', value)}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Any price" />
-            </SelectTrigger>
-            <SelectContent className="bg-white border shadow-lg z-50">
-              <SelectItem value="all">Any price</SelectItem>
-              <SelectItem value="free">Free</SelectItem>
-              <SelectItem value="paid">Paid</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        <div className="flex items-end">
-          {hasActiveFilters && (
-            <button
-              onClick={onClearAll}
-              className="w-full px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors flex items-center justify-center"
-            >
-              <X size={16} className="mr-1" />
-              Clear All
-            </button>
-          )}
-        </div>
-      </div>
+      {/* Advanced Filters */}
+      <Collapsible open={showAdvanced} onOpenChange={setShowAdvanced}>
+        <CollapsibleContent>
+          <AdvancedFilters
+            filters={filters}
+            onFilterChange={onFilterChange}
+            onClearFilters={onClearAll}
+            availableTags={availableTags}
+          />
+        </CollapsibleContent>
+      </Collapsible>
     </div>
   );
 };

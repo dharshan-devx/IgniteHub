@@ -6,16 +6,21 @@ import ResourceCard from '../components/cards/ResourceCard';
 import AdvancedSearch from '../components/AdvancedSearch';
 import ContentContainer from '../components/layout/ContentContainer';
 import { useAdvancedSearch } from '../hooks/useAdvancedSearch';
+
 const ResourceCategoryPage: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const category = categories.find(cat => cat.id === categoryId);
+  
   const {
     searchTerm,
     setSearchTerm,
     filters,
     updateFilter,
+    sortBy,
+    setSortBy,
     filteredResources,
-    clearAllFilters
+    clearAllFilters,
+    availableTags
   } = useAdvancedSearch(category?.resources || []);
 
   if (!category) {
@@ -39,7 +44,15 @@ const ResourceCategoryPage: React.FC = () => {
   }
 
   const showNoResults = filteredResources.length === 0;
-  const hasActiveFilters = searchTerm || Object.values(filters).some(f => f && f !== 'all');
+  const hasActiveFilters = searchTerm || 
+    filters.tags.length > 0 ||
+    filters.dateRange.start ||
+    filters.dateRange.end ||
+    filters.location ||
+    filters.minRating > 0 ||
+    filters.difficulty !== 'all' ||
+    filters.type !== 'all' ||
+    filters.isFree !== 'all';
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -85,7 +98,10 @@ const ResourceCategoryPage: React.FC = () => {
           onSearchChange={setSearchTerm}
           filters={filters}
           onFilterChange={updateFilter}
+          sortBy={sortBy}
+          onSortChange={setSortBy}
           onClearAll={clearAllFilters}
+          availableTags={availableTags}
           placeholder={`Search ${category.title.toLowerCase()}...`}
         />
 
@@ -117,6 +133,7 @@ const ResourceCategoryPage: React.FC = () => {
               <ResourceCard
                 key={resource.id}
                 resource={resource}
+                categoryId={categoryId}
               />
             ))}
           </div>

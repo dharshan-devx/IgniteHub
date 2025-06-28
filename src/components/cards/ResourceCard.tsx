@@ -1,47 +1,74 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
-
-interface Resource {
-  id: string;
-  name: string;
-  description: string;
-  url: string;
-  tags: string[];
-  difficulty?: string;
-  type?: string;
-  isFree?: boolean;
-}
+import { ExternalLink, Star } from 'lucide-react';
+import { Resource } from '../../data/resources';
+import FavoriteButton from '../favorites/FavoriteButton';
 
 interface ResourceCardProps {
   resource: Resource;
+  categoryId?: string;
 }
 
-const ResourceCard: React.FC<ResourceCardProps> = ({ resource }) => {
+const ResourceCard: React.FC<ResourceCardProps> = ({ resource, categoryId = '' }) => {
   return (
     <div className="flex flex-col justify-between h-full border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 bg-white relative group">
       {/* Header */}
       <div className="mb-4">
         <div className="flex items-start justify-between">
-          <h3 className="text-xl font-semibold text-gray-900 leading-tight mb-2 line-clamp-2">
+          <h3 className="text-xl font-semibold text-gray-900 leading-tight mb-2 line-clamp-2 flex-1">
             {resource.name}
           </h3>
-          <a
-            href={resource.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-2 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors"
-          >
-            <ExternalLink size={18} className="text-purple-600" />
-          </a>
+          <div className="flex items-center space-x-2 ml-2">
+            <FavoriteButton 
+              resourceId={resource.id} 
+              categoryId={categoryId}
+              size="sm"
+            />
+            <a
+              href={resource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors"
+            >
+              <ExternalLink size={18} className="text-purple-600" />
+            </a>
+          </div>
         </div>
 
         <p className="text-sm text-gray-600 leading-relaxed">
           {resource.description}
         </p>
+
+        {/* Rating */}
+        {resource.rating && (
+          <div className="flex items-center space-x-2 mt-3">
+            <div className="flex items-center">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star
+                  key={star}
+                  size={16}
+                  className={`${
+                    star <= Math.round(resource.rating!)
+                      ? 'text-yellow-400 fill-current'
+                      : 'text-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
+            <span className="text-sm text-gray-600">
+              {resource.rating.toFixed(1)} ({resource.reviewCount} reviews)
+            </span>
+          </div>
+        )}
       </div>
+
       <div className="space-y-3">
         {/* Badges */}
         <div className="flex flex-wrap gap-2">
+          {resource.featured && (
+            <span className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-medium">
+              ⭐ Featured
+            </span>
+          )}
           {resource.difficulty && (
             <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium">
               {resource.difficulty}
