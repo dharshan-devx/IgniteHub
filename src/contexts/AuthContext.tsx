@@ -2,6 +2,14 @@ import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { AuthState, AuthContextType, LoginCredentials, RegisterCredentials, User, UserPreferences } from '../types/auth';
 import { toast } from 'sonner';
 
+// Google Auth configuration
+declare global {
+  interface Window {
+    google: any;
+    gapi: any;
+  }
+}
+
 // Mock user data for development
 const mockUser: User = {
   id: 'user-1',
@@ -99,8 +107,35 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  // Check for existing session on mount
+  // Initialize Google Auth
   useEffect(() => {
+    const initializeGoogleAuth = async () => {
+      try {
+        // Load Google Identity Services
+        const script = document.createElement('script');
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+
+        script.onload = () => {
+          if (window.google) {
+            window.google.accounts.id.initialize({
+              client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID || 'your-google-client-id',
+              callback: handleGoogleSignIn,
+              auto_select: false,
+              cancel_on_tap_outside: true,
+            });
+          }
+        };
+      } catch (error) {
+        console.error('Failed to initialize Google Auth:', error);
+      }
+    };
+
+    initializeGoogleAuth();
+
+    // Check for existing session on mount
     const savedUser = localStorage.getItem('igniteHub_user');
     if (savedUser) {
       try {
@@ -111,6 +146,67 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     }
   }, []);
+
+  const handleGoogleSignIn = async (response: any) => {
+    dispatch({ type: 'LOGIN_START' });
+    
+    try {
+      // Decode the JWT token to get user info
+      const payload = JSON.parse(atob(response.credential.split('.')[1]));
+      
+      const googleUser: User = {
+        id: payload.sub,
+        email: payload.email,
+        name: payload.name,
+        avatar: payload.picture,
+        bio: '',
+        location: '',
+        website: '',
+        github: '',
+        twitter: '',
+        linkedin: '',
+        skills: [],
+        interests: [],
+        joinedAt: new Date(),
+        lastActive: new Date(),
+        isVerified: payload.email_verified,
+        role: 'user',
+        preferences: {
+          theme: 'light',
+          emailNotifications: true,
+          pushNotifications: true,
+          weeklyDigest: true,
+          resourceRecommendations: true,
+          communityUpdates: true,
+          language: 'en',
+          timezone: 'America/Los_Angeles'
+        },
+        stats: {
+          resourcesBookmarked: 0,
+          reviewsWritten: 0,
+          helpfulVotes: 0,
+          resourcesSubmitted: 0,
+          communityPoints: 0,
+          badgesEarned: ['New Member']
+        }
+      };
+
+      localStorage.setItem('igniteHub_user', JSON.stringify(googleUser));
+      dispatch({ type: 'LOGIN_SUCCESS', payload: googleUser });
+      toast.success(`Welcome, ${googleUser.name}!`);
+    } catch (error) {
+      dispatch({ type: 'LOGIN_ERROR', payload: 'Google sign-in failed' });
+      toast.error('Google sign-in failed');
+    }
+  };
+
+  const loginWithGoogle = () => {
+    if (window.google) {
+      window.google.accounts.id.prompt();
+    } else {
+      toast.error('Google Sign-In is not available');
+    }
+  };
 
   const login = async (credentials: LoginCredentials): Promise<void> => {
     dispatch({ type: 'LOGIN_START' });
@@ -219,7 +315,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     logout,
     updateProfile,
     updatePreferences,
-    clearError
+    clearError,
+    loginWithGoogle
   };
 
   return (

@@ -20,7 +20,7 @@ export interface User {
 }
 
 export interface UserPreferences {
-  theme: 'light' | 'dark' | 'system';
+  theme: 'light';
   emailNotifications: boolean;
   pushNotifications: boolean;
   weeklyDigest: boolean;
@@ -69,4 +69,5 @@ export interface AuthContextType {
   updateProfile: (updates: Partial<User>) => Promise<void>;
   updatePreferences: (preferences: Partial<UserPreferences>) => Promise<void>;
   clearError: () => void;
+  loginWithGoogle: () => void;
 }

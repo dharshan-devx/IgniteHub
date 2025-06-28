@@ -95,6 +95,32 @@ export const categories: Category[] = [
         rating: 4.5,
         reviewCount: 420,
         dateAdded: '2024-02-01'
+      },
+      {
+        id: 'claude',
+        name: 'Claude AI',
+        description: 'Anthropic\'s AI assistant for analysis, writing, math, coding, and creative tasks.',
+        url: 'https://claude.ai',
+        tags: ['AI', 'Assistant', 'Writing', 'Analysis'],
+        difficulty: 'beginner',
+        type: 'tool',
+        isFree: true,
+        rating: 4.7,
+        reviewCount: 580,
+        dateAdded: '2024-02-10'
+      },
+      {
+        id: 'perplexity',
+        name: 'Perplexity AI',
+        description: 'AI-powered search engine that provides accurate answers with sources.',
+        url: 'https://perplexity.ai',
+        tags: ['AI', 'Search', 'Research', 'Information'],
+        difficulty: 'beginner',
+        type: 'tool',
+        isFree: true,
+        rating: 4.4,
+        reviewCount: 320,
+        dateAdded: '2024-02-15'
       }
     ]
   },
@@ -144,6 +170,32 @@ export const categories: Category[] = [
         rating: 4.4,
         reviewCount: 340,
         dateAdded: '2024-01-18'
+      },
+      {
+        id: 'eventbrite-tech',
+        name: 'Eventbrite Tech Events',
+        description: 'Find local tech meetups, conferences, and networking events in your area.',
+        url: 'https://eventbrite.com',
+        tags: ['Events', 'Networking', 'Conferences', 'Meetups'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.2,
+        reviewCount: 450,
+        dateAdded: '2024-01-25'
+      },
+      {
+        id: 'ludum-dare',
+        name: 'Ludum Dare',
+        description: 'One of the world\'s largest and longest running game jam events.',
+        url: 'https://ldjam.com',
+        tags: ['Game Development', 'Game Jam', 'Competition'],
+        difficulty: 'intermediate',
+        type: 'platform',
+        isFree: true,
+        rating: 4.5,
+        reviewCount: 280,
+        dateAdded: '2024-02-01'
       }
     ]
   },
@@ -193,6 +245,32 @@ export const categories: Category[] = [
         rating: 4.3,
         reviewCount: 1200,
         dateAdded: '2024-01-14'
+      },
+      {
+        id: 'indiegogo',
+        name: 'Indiegogo',
+        description: 'Flexible crowdfunding platform for entrepreneurs and creators.',
+        url: 'https://indiegogo.com',
+        tags: ['Crowdfunding', 'Entrepreneurship', 'Innovation'],
+        difficulty: 'intermediate',
+        type: 'platform',
+        isFree: true,
+        rating: 4.1,
+        reviewCount: 890,
+        dateAdded: '2024-01-20'
+      },
+      {
+        id: 'angel-list',
+        name: 'AngelList',
+        description: 'Platform connecting startups with investors and talent.',
+        url: 'https://angel.co',
+        tags: ['Investment', 'Startups', 'Networking', 'Jobs'],
+        difficulty: 'intermediate',
+        type: 'platform',
+        isFree: true,
+        rating: 4.4,
+        reviewCount: 670,
+        dateAdded: '2024-01-28'
       }
     ]
   },
@@ -242,6 +320,45 @@ export const categories: Category[] = [
         rating: 4.8,
         reviewCount: 950,
         dateAdded: '2024-01-11'
+      },
+      {
+        id: 'codecademy',
+        name: 'Codecademy',
+        description: 'Interactive coding lessons and hands-on projects for learning programming.',
+        url: 'https://codecademy.com',
+        tags: ['Coding', 'Interactive Learning', 'Programming'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.3,
+        reviewCount: 1200,
+        dateAdded: '2024-01-15'
+      },
+      {
+        id: 'pluralsight',
+        name: 'Pluralsight',
+        description: 'Technology skills platform with expert-authored courses.',
+        url: 'https://pluralsight.com',
+        tags: ['Technology', 'Professional Development', 'Skills'],
+        difficulty: 'intermediate',
+        type: 'platform',
+        isFree: false,
+        rating: 4.2,
+        reviewCount: 780,
+        dateAdded: '2024-01-22'
+      },
+      {
+        id: 'khan-academy',
+        name: 'Khan Academy',
+        description: 'Free world-class education for anyone, anywhere.',
+        url: 'https://khanacademy.org',
+        tags: ['Education', 'Free', 'Mathematics', 'Science'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.6,
+        reviewCount: 1500,
+        dateAdded: '2024-02-01'
       }
     ]
   },
@@ -291,6 +408,45 @@ export const categories: Category[] = [
         reviewCount: 820,
         dateAdded: '2024-01-22',
         featured: true
+      },
+      {
+        id: 'stack-overflow',
+        name: 'Stack Overflow',
+        description: 'The largest online community for programmers to learn and share knowledge.',
+        url: 'https://stackoverflow.com',
+        tags: ['Programming', 'Q&A', 'Community', 'Help'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.5,
+        reviewCount: 2500,
+        dateAdded: '2024-01-25'
+      },
+      {
+        id: 'dev-to',
+        name: 'DEV Community',
+        description: 'A constructive and inclusive social network for software developers.',
+        url: 'https://dev.to',
+        tags: ['Community', 'Blogging', 'Programming', 'Networking'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.4,
+        reviewCount: 950,
+        dateAdded: '2024-02-01'
+      },
+      {
+        id: 'hashnode',
+        name: 'Hashnode',
+        description: 'Blogging platform for developers to share knowledge and connect.',
+        url: 'https://hashnode.com',
+        tags: ['Blogging', 'Community', 'Writing', 'Tech'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.3,
+        reviewCount: 420,
+        dateAdded: '2024-02-05'
       }
     ]
   },
@@ -340,6 +496,45 @@ export const categories: Category[] = [
         rating: 4.4,
         reviewCount: 180,
         dateAdded: '2024-01-13'
+      },
+      {
+        id: 'gitlab',
+        name: 'GitLab',
+        description: 'Complete DevOps platform with built-in Git repository management.',
+        url: 'https://gitlab.com',
+        tags: ['Git', 'DevOps', 'CI/CD', 'Open Source'],
+        difficulty: 'intermediate',
+        type: 'platform',
+        isFree: true,
+        rating: 4.3,
+        reviewCount: 850,
+        dateAdded: '2024-01-18'
+      },
+      {
+        id: 'open-source-friday',
+        name: 'Open Source Friday',
+        description: 'GitHub\'s initiative to encourage open source contributions every Friday.',
+        url: 'https://opensourcefriday.com',
+        tags: ['Open Source', 'Community', 'Contributions'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.2,
+        reviewCount: 320,
+        dateAdded: '2024-01-26'
+      },
+      {
+        id: 'hacktoberfest',
+        name: 'Hacktoberfest',
+        description: 'Annual event encouraging open source contributions throughout October.',
+        url: 'https://hacktoberfest.com',
+        tags: ['Open Source', 'Event', 'Contributions', 'Community'],
+        difficulty: 'beginner',
+        type: 'platform',
+        isFree: true,
+        rating: 4.6,
+        reviewCount: 750,
+        dateAdded: '2024-02-01'
       }
     ]
   }

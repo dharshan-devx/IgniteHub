@@ -8,7 +8,6 @@ import MobileMenu from './navigation/MobileMenu';
 import UserMenu from './auth/UserMenu';
 import LoginModal from './auth/LoginModal';
 import RegisterModal from './auth/RegisterModal';
-import ThemeToggle from './ui/ThemeToggle';
 import { useAuth } from '../contexts/AuthContext';
 import { Button } from './ui/button';
 import { isActiveRoute } from '../utils/navigation';
@@ -60,8 +59,6 @@ const Header: React.FC = () => {
             </nav>
 
             <div className="flex items-center space-x-4">
-              <ThemeToggle />
-              
               {isAuthenticated ? (
                 <UserMenu />
               ) : (
