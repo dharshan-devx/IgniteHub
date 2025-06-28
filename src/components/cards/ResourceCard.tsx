@@ -1,5 +1,6 @@
 import React from 'react';
-import { ExternalLink, Star } from 'lucide-react';
+import { ExternalLink, Star, Eye, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Resource } from '../../data/resources';
 
 interface ResourceCardProps {
@@ -13,20 +14,26 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, categoryId = '' }
       {/* Header */}
       <div className="mb-4">
         <div className="flex items-start justify-between">
-          <h3 className="text-xl font-semibold text-gray-900 leading-tight mb-2 line-clamp-2 flex-1">
-            {resource.name}
-          </h3>
+          <Link 
+            to={`/resource/${resource.id}`}
+            className="flex-1 mr-4"
+          >
+            <h3 className="text-xl font-semibold text-gray-900 leading-tight mb-2 line-clamp-2 hover:text-purple-600 transition-colors cursor-pointer">
+              {resource.name}
+            </h3>
+          </Link>
           <a
             href={resource.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors"
+            className="p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors"
+            onClick={(e) => e.stopPropagation()}
           >
             <ExternalLink size={18} className="text-purple-600" />
           </a>
         </div>
 
-        <p className="text-sm text-gray-600 leading-relaxed">
+        <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
           {resource.description}
         </p>
 
@@ -93,6 +100,17 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, categoryId = '' }
               +{resource.tags.length - 4} more
             </span>
           )}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex items-center space-x-2 pt-2">
+          <Link
+            to={`/resource/${resource.id}`}
+            className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-center py-2 px-4 rounded-lg transition-all duration-200 text-sm font-medium flex items-center justify-center"
+          >
+            <BookOpen size={16} className="mr-2" />
+            View Details
+          </Link>
         </div>
       </div>
 
