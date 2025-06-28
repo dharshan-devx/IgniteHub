@@ -3030,160 +3030,540 @@ export const categories: Category[] = [
     ]
   },
   {
-    id: 'onlineCommunities',
-    title: 'Online Communities & Networks',
-    description: 'Professional networks and communities for collaboration and career growth',
-    icon: '🌐',
-    gradient: 'from-indigo-500 to-purple-600',
-    resources: [
+    "id": "onlineCommunities",
+    "title": "Online Communities & Networks",
+    "description": "Professional networks and communities for collaboration and career growth",
+    "icon": "🌐",
+    "gradient": "from-indigo-500 to-purple-600",
+    "resources": [
       {
-        id: 'devCommunity',
-        name: 'DEV Community',
-        description: 'DEV Community (dev.to) is a social platform for developers (3.27M+ members) to share articles, ask questions, and network, with tags and challenges to help coders grow their careers.',
-        detailedDescription: 'DEV Community is a network of software developers getting together to help one another out. The software industry relies on collaboration and networked learning. We provide a place for that to happen.',
-        url: 'https://dev.to',
-        tags: ['Free', 'Developers', 'Community', 'Networking'],
-        difficulty: 'beginner',
-        type: 'platform',
-        isFree: true,
-        rating: 4.7,
-        reviewCount: 18920,
-        featured: true,
-        dateAdded: '2024-01-15',
-        features: [
-          'Article publishing',
-          'Community discussions',
-          'Tag-based content',
-          'Reading lists',
-          'Job postings',
-          'Podcast hosting',
-          'Live streaming',
-          'Developer challenges'
+        "id": "devCommunity",
+        "name": "DEV Community",
+        "description": "DEV Community (dev.to) is a social platform for developers (3.27M+ members) to share articles, ask questions, and network, with tags and challenges to help coders grow their careers.",
+        "detailedDescription": "DEV Community is an inclusive and welcoming social network for software developers to share ideas, publish articles, and build their professional network. The platform is open source and fosters collaborative learning and support among its members.",
+        "url": "https://dev.to",
+        "tags": ["Free", "Developers", "Community", "Networking", "Blogging"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 18920,
+        "featured": true,
+        "dateAdded": "2024-01-15",
+        "features": [
+          "Article publishing with Markdown",
+          "Community discussions and Q&A",
+          "Tag-based content filtering",
+          "Job board",
+          "Open source platform (Forem)",
+          "Podcast and video hosting"
         ],
-        pricing: {
-          free: 'Completely free platform'
+        "pricing": {
+          "free": "Completely free to use and contribute."
         },
-        requirements: ['Internet connection', 'DEV account for posting'],
-        alternatives: ['Medium', 'Hashnode', 'CodeNewbie Community', 'IndieHackers']
+        "requirements": ["Internet connection", "Account for participation"],
+        "alternatives": ["Medium", "Hashnode", "freeCodeCamp Forum", "HackerNoon"]
       },
       {
-        id: 'github',
-        name: 'GitHub',
-        description: 'GitHub is the world\'s largest developer platform and code hosting site (100M+ repositories) fostering a global community of coders contributing to open source; it emphasizes collaboration and inclusion.',
-        detailedDescription: 'GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside 73 million developers.',
-        url: 'https://github.com',
-        tags: ['Free', 'Paid', 'Developers', 'OpenSource'],
-        difficulty: 'beginner',
-        type: 'platform',
-        isFree: true,
-        rating: 4.8,
-        reviewCount: 89760,
-        featured: true,
-        dateAdded: '2024-01-20',
-        features: [
-          'Git repositories',
-          'Issue tracking',
-          'Pull requests',
-          'GitHub Actions (CI/CD)',
-          'Project management',
-          'Community features',
-          'GitHub Pages',
-          'Security features'
+        "id": "github",
+        "name": "GitHub",
+        "description": "GitHub is the world's largest developer platform and code hosting site (100M+ repositories) fostering a global community of coders contributing to open source; it emphasizes collaboration and inclusion.",
+        "detailedDescription": "GitHub is the leading development platform for building, shipping, and maintaining software. It provides distributed version control using Git, plus project management, issue tracking, CI/CD automation via GitHub Actions, and a collaborative environment for code review. It's the home for millions of open-source projects.",
+        "url": "https://github.com",
+        "tags": ["Free", "Paid", "Developers", "OpenSource", "Collaboration"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.9,
+        "reviewCount": 89760,
+        "featured": true,
+        "dateAdded": "2024-01-20",
+        "features": [
+          "Git version control hosting",
+          "Pull requests for code review",
+          "Integrated issue tracking",
+          "GitHub Actions for CI/CD",
+          "GitHub Pages for web hosting",
+          "GitHub Copilot AI integration"
         ],
-        pricing: {
-          free: 'Unlimited public repositories',
-          paid: ['GitHub Pro: $4/month', 'GitHub Team: $4/user/month', 'GitHub Enterprise: $21/user/month']
+        "pricing": {
+          "free": "Free plan with unlimited public/private repositories for individuals.",
+          "paid": ["Team: $4/user/month", "Enterprise: $21/user/month"]
         },
-        requirements: ['Git knowledge', 'Internet connection', 'GitHub account'],
-        alternatives: ['GitLab', 'Bitbucket', 'SourceForge', 'Codeberg']
+        "requirements": ["Git knowledge", "Internet connection", "GitHub account"],
+        "alternatives": ["GitLab", "Bitbucket", "SourceForge", "Codeberg"]
       },
       {
-        id: 'stackExchange',
-        name: 'Stack Exchange',
-        description: 'Stack Exchange is a network of 182 expert Q&A communities (including Stack Overflow for programmers) where users ask and answer questions on diverse topics; the best answers are voted to the top.',
-        detailedDescription: 'Stack Exchange is a network of question-and-answer websites on topics in diverse fields, each site covering a specific topic, where questions, answers, and users are subject to a reputation award process.',
-        url: 'https://stackexchange.com',
-        tags: ['Free', 'Students', 'Professionals', 'Q&A'],
-        difficulty: 'beginner',
-        type: 'platform',
-        isFree: true,
-        rating: 4.6,
-        reviewCount: 45670,
-        featured: true,
-        dateAdded: '2024-01-25',
-        features: [
-          'Expert Q&A communities',
-          'Reputation system',
-          'Tag-based organization',
-          'Community moderation',
-          'Knowledge sharing',
-          'Professional networking',
-          'Mobile apps'
+        "id": "stackExchange",
+        "name": "Stack Exchange",
+        "description": "Stack Exchange is a network of 182 expert Q&A communities (including Stack Overflow for programmers) where users ask and answer questions on diverse topics; the best answers are voted to the top.",
+        "detailedDescription": "Stack Exchange is a network of question-and-answer websites on topics in diverse fields, each site covering a specific topic. Questions, answers, and users are subject to a reputation award process, ensuring high-quality, curated information. Stack Overflow is its flagship site for programming.",
+        "url": "https://stackexchange.com",
+        "tags": ["Free", "Students", "Professionals", "Q&A", "Knowledge"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.6,
+        "reviewCount": 45670,
+        "featured": true,
+        "dateAdded": "2024-01-25",
+        "features": [
+          "180+ expert Q&A communities",
+          "Voting and reputation system",
+          "Tag-based organization",
+          "Community moderation",
+          "Knowledge sharing across diverse fields",
+          "No-nonsense Q&A format"
         ],
-        pricing: {
-          free: 'Full access to all communities'
+        "pricing": {
+          "free": "Full access to all communities is free."
         },
-        requirements: ['Internet connection', 'Account for participation'],
-        alternatives: ['Quora', 'Reddit', 'Discord communities', 'Slack workspaces']
+        "requirements": ["Internet connection", "Account for participation"],
+        "alternatives": ["Quora", "Reddit", "Discord communities", "Discourse forums"]
       },
       {
-        id: 'stackoverflow',
-        name: 'Stack Overflow',
-        description: 'Stack Overflow is the largest online community for programmers to learn, share knowledge, and build careers, with over 50 million visitors monthly.',
-        detailedDescription: 'Stack Overflow is the largest, most trusted online community for developers to learn, share their programming knowledge, and build their careers. More than 50 million professional and aspiring programmers visit Stack Overflow each month.',
-        url: 'https://stackoverflow.com',
-        tags: ['Free', 'Developers', 'Q&A', 'Programming'],
-        difficulty: 'beginner',
-        type: 'platform',
-        isFree: true,
-        rating: 4.7,
-        reviewCount: 67890,
-        featured: true,
-        dateAdded: '2024-02-01',
-        features: [
-          'Programming Q&A',
-          'Reputation system',
-          'Tag-based organization',
-          'Job board',
-          'Developer survey',
-          'Teams collaboration',
-          'Code snippets',
-          'Community wiki'
+        "id": "stackoverflow",
+        "name": "Stack Overflow",
+        "description": "Stack Overflow is the largest online community for developers to learn, share knowledge, and build careers, with over 50 million visitors monthly.",
+        "detailedDescription": "Stack Overflow is the largest, most trusted online community for developers to learn, share their programming knowledge, and build their careers. It's a strictly-moderated Q&A site where programmers can find high-quality answers to their technical questions.",
+        "url": "https://stackoverflow.com",
+        "tags": ["Free", "Developers", "Q&A", "Programming", "Coding"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.8,
+        "reviewCount": 67890,
+        "featured": true,
+        "dateAdded": "2024-02-01",
+        "features": [
+          "Programming Q&A",
+          "Reputation and badge system",
+          "Tag-based organization for technologies",
+          "Job board (Jobs)",
+          "Annual Developer Survey",
+          "Private team collaboration (paid)"
         ],
-        pricing: {
-          free: 'Full access to Q&A platform',
-          paid: ['Stack Overflow for Teams: $5/user/month']
+        "pricing": {
+          "free": "Full access to public Q&A platform.",
+          "paid": ["Stack Overflow for Teams: Starts at $7/user/month"]
         },
-        requirements: ['Internet connection', 'Programming knowledge helpful'],
-        alternatives: ['Reddit r/programming', 'Dev.to', 'Quora', 'GitHub Discussions']
+        "requirements": ["Internet connection", "Account to ask/answer questions"],
+        "alternatives": ["Reddit r/learnprogramming", "DEV Community", "Quora", "GitHub Discussions"]
       },
       {
-        id: 'reddit',
-        name: 'Reddit Programming Communities',
-        description: 'Reddit hosts numerous programming communities like r/programming, r/learnprogramming, and language-specific subreddits for developers to discuss, learn, and share.',
-        detailedDescription: 'Reddit\'s programming communities offer a diverse range of discussions, from beginner questions to advanced technical topics. Popular subreddits include r/programming, r/learnprogramming, and language-specific communities.',
-        url: 'https://www.reddit.com/r/programming',
-        tags: ['Free', 'Community', 'Programming', 'Discussion'],
-        difficulty: 'beginner',
-        type: 'platform',
-        isFree: true,
-        rating: 4.4,
-        reviewCount: 23450,
-        dateAdded: '2024-02-05',
-        features: [
-          'Topic-based communities',
-          'Voting system',
-          'Discussion threads',
-          'AMAs with experts',
-          'Resource sharing',
-          'News and updates',
-          'Mobile apps'
+        "id": "reddit",
+        "name": "Reddit Programming Communities",
+        "description": "Reddit hosts numerous programming communities like r/programming, r/learnprogramming, and language-specific subreddits for developers to discuss, learn, and share.",
+        "detailedDescription": "Reddit is a vast network of communities based on people's interests. For developers, subreddits like r/programming, r/learnprogramming, r/webdev, and language-specific forums (e.g., r/python) are invaluable resources for news, discussion, asking for help, and sharing projects.",
+        "url": "https://www.reddit.com/r/programming",
+        "tags": ["Free", "Community", "Programming", "Discussion", "News"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.5,
+        "reviewCount": 23450,
+        "featured": true,
+        "dateAdded": "2024-02-05",
+        "features": [
+          "Topic-based communities (subreddits)",
+          "Upvote/downvote system for content",
+          "Rich discussion threads",
+          "AMAs (Ask Me Anything) with experts",
+          "Resource and news sharing"
         ],
-        pricing: {
-          free: 'Free access to all communities'
+        "pricing": {
+          "free": "Free access to all communities.",
+          "paid": ["Reddit Premium for ad-free experience and other perks."]
         },
-        requirements: ['Reddit account', 'Internet connection'],
-        alternatives: ['Discord servers', 'Slack communities', 'Telegram groups', 'Stack Overflow']
+        "requirements": ["Reddit account", "Internet connection"],
+        "alternatives": ["Discord servers", "Hacker News", "DEV Community", "Stack Overflow"]
+      },
+      {
+        "id": "discord",
+        "name": "Programming Discord Servers",
+        "description": "Discord hosts thousands of programming communities where developers chat in real-time, share projects, get help, and collaborate on coding challenges.",
+        "detailedDescription": "Discord is a real-time chat platform organized into servers, each with its own text and voice channels. It has become a major hub for programming communities, from official language servers (like The Python Discord) to specific frameworks and general help groups.",
+        "url": "https://discord.com",
+        "tags": ["Free", "Community", "RealTime", "Programming", "Collaboration"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 55000,
+        "featured": true,
+        "dateAdded": "2024-02-10",
+        "features": [
+          "Real-time text and voice chat",
+          "Server-based community organization",
+          "Screen sharing and streaming",
+          "Roles and permissions management",
+          "Bot integrations for enhanced functionality"
+        ],
+        "pricing": {
+          "free": "Core functionality is free.",
+          "paid": ["Nitro subscription for enhanced emojis, larger uploads, and other perks."]
+        },
+        "requirements": ["Discord account", "Desktop or mobile app/web browser"],
+        "alternatives": ["Slack", "Telegram", "Element", "Guilded"]
+      },
+      {
+        "id": "hashnode",
+        "name": "Hashnode",
+        "description": "Hashnode is a blogging platform for developers to share technical articles, build their personal brand, and connect with the global developer community.",
+        "detailedDescription": "Hashnode is a free, developer-focused blogging platform that helps you publish articles on your own custom domain. It offers a rich Markdown editor, automatic GitHub backup, and a built-in community network to help your content reach a wider audience.",
+        "url": "https://hashnode.com",
+        "tags": ["Free", "Blogging", "Developers", "TechnicalWriting", "Community"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 15000,
+        "featured": true,
+        "dateAdded": "2024-02-15",
+        "features": [
+          "Free custom domain mapping",
+          "No ads or paywalls",
+          "Automatic GitHub backup of articles",
+          "Rich Markdown editor",
+          "Built-in newsletter service",
+          "Community engagement features"
+        ],
+        "pricing": {
+          "free": "Completely free for individual bloggers."
+        },
+        "requirements": ["Account registration", "Content to share"],
+        "alternatives": ["DEV Community", "Medium", "Ghost", "Substack"]
+      },
+      {
+        "id": "indie-hackers",
+        "name": "Indie Hackers",
+        "description": "Indie Hackers is a community of entrepreneurs sharing the strategies and revenue numbers behind their companies and side projects.",
+        "detailedDescription": "Indie Hackers, a part of Stripe, is a community where founders of profitable businesses and side projects share their stories. It features interviews, podcasts, and a forum where members discuss strategies, find co-founders, and get feedback on their ideas.",
+        "url": "https://www.indiehackers.com",
+        "tags": ["Free", "Entrepreneurs", "Startups", "Community", "Founders"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.6,
+        "reviewCount": 12000,
+        "featured": false,
+        "dateAdded": "2024-02-20",
+        "features": [
+          "Transparent founder interviews",
+          "Revenue and metrics sharing",
+          "Active community forum",
+          "Product database",
+          "Milestones and goal tracking",
+          "Groups for specific interests"
+        ],
+        "pricing": {
+          "free": "Completely free to use."
+        },
+        "requirements": ["Account to participate"],
+        "alternatives": ["Reddit r/startups", "Hacker News", "Product Hunt", "Build in Public"]
+      },
+      {
+        "id": "producthunt",
+        "name": "Product Hunt",
+        "description": "Product Hunt is a community for discovering and launching new products, where makers share their latest creations and users discover cool new tools.",
+        "detailedDescription": "Product Hunt is a daily discovery platform for new tech products. It's a place for product-loving enthusiasts to share and geek out about the latest mobile apps, websites, hardware projects, and tech creations. Makers can launch their products to a large, engaged audience.",
+        "url": "https://www.producthunt.com",
+        "tags": ["Free", "ProductLaunch", "Community", "Innovation", "Startups"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 22000,
+        "featured": true,
+        "dateAdded": "2024-02-25",
+        "features": [
+          "Daily product discovery",
+          "Product launch platform for makers",
+          "Upvoting and ranking system",
+          "Community discussions and reviews",
+          "Job board",
+          "Founder and investor networking"
+        ],
+        "pricing": {
+          "free": "Free to use, discover, and launch products."
+        },
+        "requirements": ["Account for voting and launching"],
+        "alternatives": ["BetaList", "Hacker News (Show HN)", "Indie Hackers", "AppSumo"]
+      },
+      {
+        "id": "hackernews",
+        "name": "Hacker News",
+        "description": "Hacker News is a social news website focusing on computer science and entrepreneurship, run by startup accelerator Y Combinator.",
+        "detailedDescription": "Hacker News (HN) is a social news website with a minimalist design, focused on computer science and entrepreneurship. Content is submitted by users and ranked by a combination of upvotes and time. It is known for its high-quality, in-depth discussions among a technically savvy audience.",
+        "url": "https://news.ycombinator.com",
+        "tags": ["Free", "TechNews", "Startups", "Discussion", "Developers"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.8,
+        "reviewCount": 35000,
+        "featured": true,
+        "dateAdded": "2024-03-01",
+        "features": [
+          "User-submitted news and links",
+          "In-depth comment threads",
+          "Simple, text-based interface",
+          "Strong community moderation",
+          "'Show HN' for showcasing projects",
+          "Run by Y Combinator"
+        ],
+        "pricing": {
+          "free": "Completely free."
+        },
+        "requirements": ["Web browser"],
+        "alternatives": ["Reddit r/programming", "Lobste.rs", "Slashdot", "Tildes"]
+      },
+      {
+        "id": "behance",
+        "name": "Behance",
+        "description": "Behance is Adobe's creative community where designers, artists, and creatives showcase their work, discover inspiration, and connect with potential clients.",
+        "detailedDescription": "Behance, part of the Adobe family, is the leading online platform for showcasing and discovering creative work. Creatives can build a portfolio, and companies can explore work and hire talent. It features a wide range of fields, including graphic design, illustration, and UI/UX.",
+        "url": "https://www.behance.net",
+        "tags": ["Free", "Design", "Creatives", "Portfolio", "Inspiration"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 41000,
+        "featured": false,
+        "dateAdded": "2024-03-05",
+        "features": [
+          "Online portfolio hosting",
+          "Project-based showcases",
+          "Job board for creative roles",
+          "Live streaming from artists",
+          "Moodboards for inspiration",
+          "Integration with Adobe Creative Cloud"
+        ],
+        "pricing": {
+          "free": "Free to create a portfolio and browse work."
+        },
+        "requirements": ["Adobe account"],
+        "alternatives": ["Dribbble", "ArtStation", "Pinterest", "Cargo"]
+      },
+      {
+        "id": "dribbble",
+        "name": "Dribbble",
+        "description": "Dribbble is a community of designers sharing screenshots of their work, process, and projects, serving as inspiration and networking platform for creatives.",
+        "detailedDescription": "Dribbble is a self-promotion and social networking platform for digital designers and creatives. It serves as a go-to resource for discovering and connecting with designers around the globe, with a focus on small screenshots of work-in-progress, known as 'Shots'.",
+        "url": "https://dribbble.com",
+        "tags": ["Free", "Paid", "Design", "Inspiration", "Networking"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.6,
+        "reviewCount": 38000,
+        "featured": false,
+        "dateAdded": "2024-03-10",
+        "features": [
+          "Showcase small 'Shots' of work",
+          "Designer portfolio pages",
+          "Job board for freelance and full-time",
+          "Design inspiration feeds",
+          "Pro features for hiring and advanced profiles"
+        ],
+        "pricing": {
+          "free": "Free to browse and limited uploads.",
+          "paid": ["Pro subscription (~$5/month) for more features and unlimited uploads."]
+        },
+        "requirements": ["Account to participate"],
+        "alternatives": ["Behance", "Pinterest", "Awwwards", "UI8"]
+      },
+      {
+        "id": "women-who-code",
+        "name": "Women Who Code",
+        "description": "Women Who Code is a global nonprofit empowering women in technology through community support, professional development, and job placement assistance.",
+        "detailedDescription": "Women Who Code (WWC) is a global nonprofit organization dedicated to inspiring women to excel in technology careers. WWC provides a community, resources, scholarships, and a job board to support the professional growth of its members.",
+        "url": "https://www.womenwhocode.com",
+        "tags": ["Free", "Women", "Technology", "Community", "Career"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.8,
+        "reviewCount": 9500,
+        "featured": false,
+        "dateAdded": "2024-03-12",
+        "features": [
+          "Global network of local chapters",
+          "Technical events and workshops",
+          "Leadership opportunities",
+          "Job board and career resources",
+          "Scholarship opportunities"
+        ],
+        "pricing": {
+          "free": "Membership and access to community events are free."
+        },
+        "requirements": ["Identify as a woman in or interested in tech"],
+        "alternatives": ["TechLadies", "Elpha", "Girls Who Code", "Built By Girls"]
+      },
+      {
+        "id": "angellist",
+        "name": "AngelList (Wellfound)",
+        "description": "AngelList (now Wellfound) connects startups with talent and investors, offering job opportunities, funding connections, and startup ecosystem networking.",
+        "detailedDescription": "Wellfound (formerly AngelList Talent) is the leading platform for finding jobs at startups. It provides a transparent job search experience where candidates can see salary ranges and equity upfront, and connect directly with founders and hiring managers at high-growth tech companies.",
+        "url": "https://wellfound.com",
+        "tags": ["Free", "Startups", "Jobs", "Investors", "Networking"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 18000,
+        "featured": false,
+        "dateAdded": "2024-03-15",
+        "features": [
+          "Startup-focused job board",
+          "Transparent salary and equity data",
+          "Direct connection to founders",
+          "Company profiles and funding data",
+          "Syndicates for startup investing"
+        ],
+        "pricing": {
+          "free": "Free for candidates to find jobs."
+        },
+        "requirements": ["Profile creation"],
+        "alternatives": ["LinkedIn", "Otta", "Y Combinator's Work at a Startup", "Hired"]
+      },
+      {
+        "id": "kaggle",
+        "name": "Kaggle",
+        "description": "Kaggle is a platform for data science competitions, datasets, and machine learning collaborations, hosting a community of over 12 million data scientists.",
+        "detailedDescription": "Kaggle, owned by Google, is the world's largest data science community. It allows users to find and publish datasets, explore and build models in a web-based data science environment, work with other data scientists, and enter competitions to solve real-world data science challenges.",
+        "url": "https://www.kaggle.com",
+        "tags": ["Free", "DataScience", "MachineLearning", "Competitions", "Community"],
+        "difficulty": "intermediate",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.8,
+        "reviewCount": 21000,
+        "featured": true,
+        "dateAdded": "2024-03-20",
+        "features": [
+          "Data science competitions with cash prizes",
+          "Vast repository of public datasets",
+          "Free cloud-based notebooks (Kernels) with GPU/TPU",
+          "Community forums and discussions",
+          "Micro-courses on data science topics"
+        ],
+        "pricing": {
+          "free": "Completely free to use."
+        },
+        "requirements": ["Account", "Knowledge of data science/programming"],
+        "alternatives": ["Zindi", "DrivenData", "Hugging Face", "Analytics Vidhya"]
+      },
+      {
+        "id": "meetup",
+        "name": "Meetup",
+        "description": "Meetup is a platform for finding and organizing local in-person or virtual groups. Tech enthusiasts use it to create/join communities (e.g., coding workshops, AI study groups) in hundreds of cities worldwide.",
+        "detailedDescription": "Meetup is a social media platform for hosting and organizing in-person and virtual activities, gatherings, and events for people and communities of similar interests. It's a popular choice for tech communities, developer groups, and user groups to organize local events.",
+        "url": "https://www.meetup.com/",
+        "tags": ["Free", "Paid", "LocalEvents", "Community", "Networking"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 45000,
+        "featured": false,
+        "dateAdded": "2024-03-22",
+        "features": [
+          "Local and online event discovery",
+          "Group creation and management tools",
+          "RSVP and attendee management",
+          "Interest-based group recommendations",
+          "Mobile apps for on-the-go access"
+        ],
+        "pricing": {
+          "free": "Free for members to join groups and attend most events.",
+          "paid": ["Organizers pay a subscription fee to run a group (from ~$16/month)."]
+        },
+        "requirements": ["Account to join groups"],
+        "alternatives": ["Eventbrite", "Facebook Events", "Luma", "CommandBar"]
+      },
+      {
+        "id": "digitalocean_community",
+        "name": "DigitalOcean Community",
+        "description": "DigitalOcean Community provides tutorials, Q&A, and forums focused on cloud computing and programming. Developers use it to learn about web infrastructure, Linux, and app deployment through community-contributed articles and answers.",
+        "detailedDescription": "The DigitalOcean Community is a vast resource hub featuring high-quality tutorials, Q&A sections, and tech talks. It's renowned for its detailed, step-by-step guides on Linux system administration, web server configuration, and software development, primarily focused on open-source technologies.",
+        "url": "https://www.digitalocean.com/community",
+        "tags": ["Free", "Developers", "Tutorials", "Cloud", "Linux"],
+        "difficulty": "intermediate",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.8,
+        "reviewCount": 16000,
+        "featured": false,
+        "dateAdded": "2024-03-25",
+        "features": [
+          "In-depth, high-quality tutorials",
+          "Community Q&A forum",
+          "Covers a wide range of open-source software",
+          "Focus on practical, real-world setups",
+          "Free and accessible to everyone"
+        ],
+        "pricing": {
+          "free": "All content is completely free."
+        },
+        "requirements": ["Web browser", "Interest in server administration or development"],
+        "alternatives": ["Linode Guides", "Vultr Docs", "AWS/Google Cloud Documentation", "Smashing Magazine"]
+      },
+      {
+        "id": "geeksforgeeks",
+        "name": "GeeksforGeeks",
+        "description": "GeeksforGeeks is a computer science portal and community that offers programming tutorials, coding problems, and interview preparation resources. It helps students and developers learn algorithms, data structures, and practice coding through a vast library of articles.",
+        "detailedDescription": "GeeksforGeeks is a comprehensive computer science portal for geeks. It contains well-written, well-thought-out, and well-explained computer science and programming articles, quizzes, and practice problems for interview preparation and skill development.",
+        "url": "https://www.geeksforgeeks.org/",
+        "tags": ["Free", "Students", "Developers", "InterviewPrep", "Algorithms"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.6,
+        "reviewCount": 32000,
+        "featured": false,
+        "dateAdded": "2024-03-28",
+        "features": [
+          "Large library of CS articles",
+          "Data structures and algorithms tutorials",
+          "Company-specific interview experiences",
+          "Coding practice problems",
+          "Online courses and certifications"
+        ],
+        "pricing": {
+          "free": "Most articles and practice problems are free.",
+          "paid": ["Paid courses and certification programs are available."]
+        },
+        "requirements": ["Web browser"],
+        "alternatives": ["LeetCode", "HackerRank", "TopCoder", "TutorialsPoint"]
+      },
+      {
+        "id": "gdg",
+        "name": "Google Developer Groups",
+        "description": "Google Developer Groups (GDG) are local developer communities where developers meet to discuss and learn about Google technologies.",
+        "detailedDescription": "Google Developer Groups (GDGs) are local, community-run meetup groups for developers interested in Google's developer technology. Each local group plans and hosts a variety of events, from talks on new technologies to hackathons and study jams.",
+        "url": "https://developers.google.com/community/gdg",
+        "tags": ["Free", "Community", "Google", "Events", "Local"],
+        "difficulty": "beginner",
+        "type": "platform",
+        "isFree": true,
+        "rating": 4.7,
+        "reviewCount": 11000,
+        "featured": false,
+        "dateAdded": "2024-04-01",
+        "features": [
+          "Local, in-person and online events",
+          "Focus on Google technologies (Android, Cloud, AI)",
+          "Hands-on workshops and study jams",
+          "Networking with local developers",
+          "Supported by Google"
+        ],
+        "pricing": {
+          "free": "Events are typically free to attend."
+        },
+        "requirements": ["Interest in Google tech", "Registration via the GDG platform or Meetup.com"],
+        "alternatives": ["Microsoft Reactor", "AWS User Groups", "Facebook Developer Circles", "Meetup"]
       }
     ]
   }
