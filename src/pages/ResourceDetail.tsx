@@ -4,8 +4,6 @@ import { ArrowLeft, ExternalLink, Star, Calendar, Tag } from 'lucide-react';
 import { categories } from '../data/resources';
 import PageHeader from '../components/layout/PageHeader';
 import ContentContainer from '../components/layout/ContentContainer';
-import ReviewsSection from '../components/reviews/ReviewsSection';
-import FavoriteButton from '../components/favorites/FavoriteButton';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 
@@ -148,18 +146,32 @@ const ResourceDetail: React.FC = () => {
                     Visit Resource
                   </a>
                 </Button>
-                
-                <FavoriteButton 
-                  resourceId={resource.id} 
-                  categoryId={categoryId}
-                  variant="button"
-                  size="lg"
-                />
               </div>
             </div>
 
-            {/* Reviews Section */}
-            <ReviewsSection resourceId={resource.id} />
+            {/* Additional Info */}
+            <div className="bg-white rounded-lg shadow-sm border p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Resource</h2>
+              <p className="text-gray-700 leading-relaxed">
+                {resource.description}
+              </p>
+              
+              {resource.tags.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Related Topics</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {resource.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Sidebar */}

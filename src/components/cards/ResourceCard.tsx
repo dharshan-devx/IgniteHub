@@ -1,7 +1,6 @@
 import React from 'react';
 import { ExternalLink, Star } from 'lucide-react';
 import { Resource } from '../../data/resources';
-import FavoriteButton from '../favorites/FavoriteButton';
 
 interface ResourceCardProps {
   resource: Resource;
@@ -17,21 +16,14 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ resource, categoryId = '' }
           <h3 className="text-xl font-semibold text-gray-900 leading-tight mb-2 line-clamp-2 flex-1">
             {resource.name}
           </h3>
-          <div className="flex items-center space-x-2 ml-2">
-            <FavoriteButton 
-              resourceId={resource.id} 
-              categoryId={categoryId}
-              size="sm"
-            />
-            <a
-              href={resource.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors"
-            >
-              <ExternalLink size={18} className="text-purple-600" />
-            </a>
-          </div>
+          <a
+            href={resource.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 p-2 rounded-full bg-purple-50 hover:bg-purple-100 transition-colors"
+          >
+            <ExternalLink size={18} className="text-purple-600" />
+          </a>
         </div>
 
         <p className="text-sm text-gray-600 leading-relaxed">

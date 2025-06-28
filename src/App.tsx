@@ -12,13 +12,8 @@ import FavoritesPage from "@/pages/Favorites";
 import AboutPage from "@/pages/About";
 import ContactPage from "@/pages/Contact";
 import NotFoundPage from "@/pages/NotFound";
-import Dashboard from "@/pages/Dashboard";
-import Settings from "@/pages/Settings";
-import MyReviews from "@/pages/MyReviews";
-import Achievements from "@/pages/Achievements";
 import ResourceDetail from "@/pages/ResourceDetail";
 
-import { AuthProvider } from "@/contexts/AuthContext";
 import ErrorBoundary from "@/components/ui/ErrorBoundary";
 
 const queryClient = new QueryClient({
@@ -34,30 +29,24 @@ const App: React.FC = () => {
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<HomePage />} />
-                  <Route path="resources" element={<ResourcesPage />} />
-                  <Route path="resources/:categoryId" element={<ResourceCategoryPage />} />
-                  <Route path="resource/:resourceId" element={<ResourceDetail />} />
-                  <Route path="favorites" element={<FavoritesPage />} />
-                  <Route path="dashboard" element={<Dashboard />} />
-                  <Route path="settings" element={<Settings />} />
-                  <Route path="my-reviews" element={<MyReviews />} />
-                  <Route path="achievements" element={<Achievements />} />
-                  <Route path="about" element={<AboutPage />} />
-                  <Route path="contact" element={<ContactPage />} />
-                </Route>
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </BrowserRouter>
-          </TooltipProvider>
-        </AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="resources" element={<ResourcesPage />} />
+                <Route path="resources/:categoryId" element={<ResourceCategoryPage />} />
+                <Route path="resource/:resourceId" element={<ResourceDetail />} />
+                <Route path="favorites" element={<FavoritesPage />} />
+                <Route path="about" element={<AboutPage />} />
+                <Route path="contact" element={<ContactPage />} />
+              </Route>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
       </QueryClientProvider>
     </ErrorBoundary>
   );
